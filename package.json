@@ -75,5 +75,5 @@
     "test": "jest"
   },
   "repository": "ParadiseSeeker/generator-nevejestvo",
-  "private": true
+  // "private": true
 }

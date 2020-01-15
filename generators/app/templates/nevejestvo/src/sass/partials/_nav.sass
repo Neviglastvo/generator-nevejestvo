@@ -1,0 +1,94 @@
+.nav
+	display: flex
+	align-items: center
+	background-color: $white
+
+	&__item
+		position: relative
+		margin-right: 60px
+		overflow: hidden
+		&:last-child
+			margin-right: 0
+
+		+h
+			overflow: visible
+			.nav__sublist
+				opacity: 1
+				overflow: visible
+				height: auto
+				pointer-events: all
+				padding: 10px 0
+
+	&__link
+		color: $black
+		font-family: $f1
+		font-size: 14px
+		font-weight: 700
+		line-height: 14px
+		padding: 0 10px
+		text-transform: uppercase
+		text-decoration: none
+		white-space: nowrap
+		+trs($globalAnimSpeed)
+		+h
+			color: $accent
+
+		&--sublist
+			display: flex
+			align-items: center
+			+after('>')
+				margin-left: 6px
+
+		&--sublist2
+
+	&__sublist
+		display: flex
+		flex-direction: column
+		align-items: flex-end
+		pointer-events: none
+		position: absolute
+		top: 100%
+		right: 0
+		width: auto
+		height: 0
+		overflow: hidden
+		max-height: 500px
+		background-color: $white
+		padding: 0
+		opacity: 0
+		+trs($globalAnimSpeed)
+
+	&__sublist-item
+		position: relative
+		overflow: hidden
+		a
+			white-space: nowrap
+		+h
+			overflow: visible
+			.nav__sublist2
+				height: auto
+				opacity: 1
+				pointer-events: all
+				padding: 10px
+
+	&__sublist2
+		display: flex
+		flex-direction: column
+		padding: 0 10px
+		pointer-events: none
+		position: absolute
+		left: 100%
+		top: 0
+		width: auto
+		height: 0
+		opacity: 0
+		max-height: 500px
+		background-color: $white
+		+trs($globalAnimSpeed)
+
+	&__sublist2-item
+		display: flex
+		a
+			display: flex
+			white-space: nowrap
+

@@ -1,0 +1,37 @@
+$z-indexes: ("menu", "modal","content", "body", "bgColor")
+
+$accent: #A63446
+$white: #dddddd
+$black: #15191f
+$pink: #f10c45
+
+$f1: 'Roboto', sans
+$f2: 'Monument', sans
+
+$globalAnimSpeed: 500
+
+@import "base/*.sass"
+@import "lib/*.sass"
+@import "helpers/**/*.sass"
+@import "generated/*.sass"
+
+@import "partials/*.sass"
+@import "works/*.sass"
+
+// @include fontFace(Monument, '../fonts/monument/Monument-Regular', 500, normal, otf)
+
+body
+	background-color: $black
+	display: block
+	position: relative
+	+customScroll(8px, 0, $pink, rgba($white, 0.2))
+	z-index: z('body')
+	color: $white
+	li
+		list-style: none
+	a
+		text-decoration: none
+	svg
+		width: 50px
+		height: 50px
+		fill: $accent

@@ -1,0 +1,38 @@
+{% import "data/nav.html" as nav %}
+
+<ul class="nav">
+
+	{% for item in nav.nav %}
+
+	<li class="nav__item {% if title == item.title %}current{% endif %}">
+
+		<a href="{{ item.link }}.html" class="nav__link">{% if title == item.title %}{{ title }}{% else %}{{ item.title }}{% endif %}</a>
+
+		{% if item.sublist|length %}
+		<ul class="nav__sublist">
+
+			{% for inside in item.sublist %}
+			<li class="nav__sublist-item">
+				<a href="{{ inside.link }}.html" class="nav__link {% if inside.sublist2|length %}nav__link--sublist{% else %} {% endif %}">{{ inside.item }}</a>
+
+				{% if inside.sublist2|length %}
+				<ul class="nav__sublist2">
+					{% for inside2 in inside.sublist2 %}
+					<li class="nav__sublist2-item">
+						<a href="{{ inside2.link }}.html" class="nav__link nav__link--sublist2">{{ inside2.item }}</a>
+					</li>
+					{% endfor %}
+				</ul>
+				{% endif %}
+
+				{% endfor %}
+			</li>
+
+		</ul>
+		{% endif %}
+
+	</li>
+
+	{% endfor %}
+
+</ul>

@@ -1,0 +1,32 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+{% import "data/data.html" as items %}
+
+{% block content %}
+
+	{# variable example #}
+	<h1>{{title}}</h1>
+
+	{# mixin example #}
+	{{icon.i('arrow')}}
+
+	{# data usage example #}
+
+	{% for item in items.socials %}
+	<a href="{{item.link}}">
+		{{item.name}}
+		{# {icon.i(item.icon)} #}
+	</a>
+	{% endfor %}
+
+	{% for item in range(0, 4) %}
+	<li>Simple loop</li>
+	{% endfor %}
+
+{% endblock %}
+
+{% block scripts %}
+<!-- place here some custom scripts -->
+{% endblock %}

@@ -1,0 +1,8 @@
+ProjectTitle: New App
+ProjectColor: '#e4e8e1'
+ProjectBgColor: '#801336'
+ProjectLogo: 'img/logo.svg'
+
+PageList:
+- file: app.html
+  ready: 100

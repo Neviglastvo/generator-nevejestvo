@@ -4,7 +4,7 @@
   "description": "hehe",
   "homepage": "",
   "author": {
-    "name": "ParadiseSeeker",
+    "name": "Nevejestvo",
     "email": "paradiseseeker94@gmail.com",
     "url": ""
   },
@@ -74,6 +74,6 @@
     "pretest": "eslint .",
     "test": "jest"
   },
-  "repository": "ParadiseSeeker/generator-nevejestvo",
+  "repository": "Nevejestvo/generator-nevejestvo",
   "private": false
 }

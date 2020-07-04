@@ -1,15 +1,14 @@
 // import './lib/perlin';
 
-import sliderWorks from './sliders/sliderWorks';
+import slider from "./sliders/slider";
 
-if ($('.js-slider-works').length){
-	sliderWorks()
+if ($(".js-slider-works").length) {
+	slider();
 }
 
-
-$('.js-hamburger').on('click', function(e) {
+$(".js-hamburger").on("click", (e) => {
 	e.preventDefault();
-	$('.js-hamburger').toggleClass('active');
-	$('.js-nav-mobile').toggleClass('active');
-	$('.js-blurry').toggleClass('blurry');
+	$(".js-hamburger").toggleClass("active");
+	$(".js-nav-mobile").toggleClass("active");
+	$(".js-blurry").toggleClass("blurry");
 });

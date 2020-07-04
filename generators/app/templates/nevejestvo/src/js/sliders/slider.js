@@ -1,11 +1,10 @@
-import Swiper from 'swiper';
+import Swiper from "swiper";
 
-export default function sliderWorks(){
-	const swiper = new Swiper('.js-slider-works', {
+export default function slider() {
+	const swiper = new Swiper(".js-slider", {
 		on: {
-			init () {
-				$('.swiper-slide-active').addClass('active')
-
+			init() {
+				$(".swiper-slide-active").addClass("active");
 			},
 		},
 		nested: true,
@@ -21,7 +20,7 @@ export default function sliderWorks(){
 		centeredSlides: true,
 		parallax: true,
 		pagination: {
-			el: '.swiper-pagination',
+			el: ".swiper-pagination",
 			clickable: true,
 		},
 		// effect: 'coverflow',
@@ -37,16 +36,15 @@ export default function sliderWorks(){
 			},
 			600: {
 				slidesPerView: 1.25,
-			}
-		}
+			},
+		},
 	});
 
-	swiper.on('transitionStart', function(event) {
-		$('.swiper-wrapper').find('.active').removeClass('active')
+	swiper.on("transitionStart", () => {
+		$(".swiper-wrapper").find(".active").removeClass("active");
 	});
 
-	swiper.on('transitionEnd', function(event) {
-		$('.swiper-slide-active').addClass('active')
+	swiper.on("transitionEnd", () => {
+		$(".swiper-slide-active").addClass("active");
 	});
-
 }

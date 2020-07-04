@@ -1,11 +1,38 @@
-import notify from 'gulp-notify';
+import notifier from "node-notifier";
+import notify from "gulp-notify";
+import gutil from "gulp-util";
+// import browserSync from 'browser-sync';
 
-module.exports = function() {
-  let args = Array.prototype.slice.call(arguments);
-  notify.onError({
-      title: 'Compile Error',
-      message: '<%= error.message %>',
-      sound: 'Submarine'
-  }).apply(this, args);
-  this.emit('end');
+var browserSync = require("browser-sync").create();
+
+module.exports = function (error) {
+	let lineNumber = error.line ? "LINE " + error.line + " -- " : "",
+		report = "",
+		chalk = gutil.colors.white.bgRed;
+
+	report += chalk("TASK:") + " [" + error.plugin + "]\n";
+	if (error.file) {
+		report += chalk("FILE:") + " " + error.file + "\n";
+	}
+	if (error.line) {
+		report += chalk("LINE:") + " " + error.line + "\n";
+	}
+	report += chalk("PROB:") + " " + error.message + "\n";
+
+	console.error(report);
+
+	notifier.notify({
+		title: "Error at [" + error.plugin + "]",
+		message: lineNumber + "See console.",
+		sound: true,
+	});
+
+	setTimeout(function () {
+		browserSync.sockets.emit("fullscreen:message", {
+			title: error.plugin,
+			body: report,
+		});
+	}, 5000);
+
+	this.emit("end");
 };

@@ -1,11 +1,12 @@
 {
   "name": "generator-nevejestvo",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "hehe",
   "homepage": "",
   "author": {
-    "name": "Nevejestvo",
-    "email": "paradiseseeker94@gmail.com"
+    "name": "ParadiseSeeker",
+    "email": "paradiseseeker94@gmail.com",
+    "url": ""
   },
   "files": [
     "generators"
